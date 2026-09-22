@@ -2,88 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Birthday Wishlist</title>
-  <!-- PageFlip JS & CSS -->
-  <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Menu</title>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <style>
     * {
       box-sizing: border-box;
-    }
-    body {
       margin: 0;
       padding: 0;
-      background-color: #1a1a1a;
+    }
+    body {
+      background-color: #111111;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      overflow: hidden;
+      font-family: sans-serif;
     }
-    #container {
-      width: 100%;
-      max-width: 900px;
-      height: 90vh;
+    .swiper {
+      width: 100vw;
+      height: 100vh;
+      max-width: 600px;
+      max-height: 100vh;
+    }
+    .swiper-slide {
       display: flex;
       justify-content: center;
       align-items: center;
+      background: #111111;
     }
-    .page {
-      background-color: #ffffff;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    .swiper-slide img {
       width: 100%;
       height: 100%;
-    }
-    .page-content {
-      width: 100%;
-      height: 100%;
+      object-fit: contain;
       display: block;
+    }
+    /* Custom pagination dots color */
+    .swiper-pagination-bullet {
+      background: #ffffff;
+      opacity: 0.5;
+    }
+    .swiper-pagination-bullet-active {
+      background: #ff4757;
+      opacity: 1;
     }
   </style>
 </head>
 <body>
 
-<div id="container">
-  <div id="book">
-    <div class="page"><img src="Page_1.png" class="page-content" /></div>
-    <div class="page"><img src="Page_2.png" class="page-content" /></div>
-    <div class="page"><img src="Page_3.png" class="page-content" /></div>
-    <div class="page"><img src="Page_4.png" class="page-content" /></div>
-    <div class="page"><img src="Page_5.png" class="page-content" /></div>
-    <div class="page"><img src="Page_6.png" class="page-content" /></div>
-    <div class="page"><img src="Page_7.png" class="page-content" /></div>
-    <div class="page"><img src="Page_8.png" class="page-content" /></div>
-    <div class="page"><img src="Page_9.png" class="page-content" /></div>
-    <div class="page"><img src="Page_10.png" class="page-content" /></div>
-    <div class="page"><img src="Page_11.png" class="page-content" /></div>
-    <div class="page"><img src="Page_12.png" class="page-content" /></div>
-    <div class="page"><img src="Page_13.png" class="page-content" /></div>
-    <div class="page"><img src="Page_14.png" class="page-content" /></div>
-    <div class="page"><img src="Page_15.png" class="page-content" /></div>
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="Page_1.png" alt="Menu Page 1"></div>
+    <div class="swiper-slide"><img src="Page_2.png" alt="Menu Page 2"></div>
+    <div class="swiper-slide"><img src="Page_3.png" alt="Menu Page 3"></div>
+    <div class="swiper-slide"><img src="Page_4.png" alt="Menu Page 4"></div>
+    <div class="swiper-slide"><img src="Page_5.png" alt="Menu Page 5"></div>
+    <div class="swiper-slide"><img src="Page_6.png" alt="Menu Page 6"></div>
+    <div class="swiper-slide"><img src="Page_7.png" alt="Menu Page 7"></div>
+    <div class="swiper-slide"><img src="Page_8.png" alt="Menu Page 8"></div>
+    <div class="swiper-slide"><img src="Page_9.png" alt="Menu Page 9"></div>
+    <div class="swiper-slide"><img src="Page_10.png" alt="Menu Page 10"></div>
+    <div class="swiper-slide"><img src="Page_11.png" alt="Menu Page 11"></div>
+    <div class="swiper-slide"><img src="Page_12.png" alt="Menu Page 12"></div>
+    <div class="swiper-slide"><img src="Page_13.png" alt="Menu Page 13"></div>
+    <div class="swiper-slide"><img src="Page_14.png" alt="Menu Page 14"></div>
+    <div class="swiper-slide"><img src="Page_15.png" alt="Menu Page 15"></div>
   </div>
+  <!-- Navigation Dots & Arrows -->
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
 </div>
 
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const pageFlip = new St.PageFlip(
-      document.getElementById('book'),
-      {
-        width: 600,
-        height: 338,
-        size: 'stretch',
-        minWidth: 300,
-        maxWidth: 1000,
-        minHeight: 200,
-        maxHeight: 700,
-        maxShadowOpacity: 0.5,
-        showCover: true,
-        mobileScrollSupport: true
-      }
-    );
-    pageFlip.loadFromHTML(document.querySelectorAll('.page'));
+  const swiper = new Swiper('.swiper', {
+    loop: false,
+    grabCursor: true,
+    spaceBetween: 10,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
   });
 </script>
 </body>
