@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu Flipbook</title>
+  <title>Birthday Wishlist</title>
   <!-- PageFlip JS & CSS -->
   <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
   <style>
@@ -30,7 +30,7 @@
     }
     .page {
       background-color: #ffffff;
-      background-size: cover;
+      background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
@@ -41,21 +41,21 @@
 
 <div id="container">
   <div id="book">
-    <div class="page" style="background-image: url('./Page_1.png');"></div>
-    <div class="page" style="background-image: url('./Page_2.png');"></div>
-    <div class="page" style="background-image: url('./Page_3.png');"></div>
-    <div class="page" style="background-image: url('./Page_4.png');"></div>
-    <div class="page" style="background-image: url('./Page_5.png');"></div>
-    <div class="page" style="background-image: url('./Page_6.png');"></div>
-    <div class="page" style="background-image: url('./Page_7.png');"></div>
-    <div class="page" style="background-image: url('./Page_8.png');"></div>
-    <div class="page" style="background-image: url('./Page_9.png');"></div>
-    <div class="page" style="background-image: url('./Page_10.png');"></div>
-    <div class="page" style="background-image: url('./Page_11.png');"></div>
-    <div class="page" style="background-image: url('./Page_12.png');"></div>
-    <div class="page" style="background-image: url('./Page_13.png');"></div>
-    <div class="page" style="background-image: url('./Page_14.png');"></div>
-    <div class="page" style="background-image: url('./Page_15.png');"></div>
+    <div class="page" style="background-image: url('photos/Page_1.png');"></div>
+    <div class="page" style="background-image: url('photos/Page_2.png');"></div>
+    <div class="page" style="background-image: url('photos/Page_3.png');"></div>
+    <div class="page" style="background-image: url('photos/Page_4.png');"></div>
+    <div class="page" style="background-image: url('photos/Page_5.png');"></div>
+    <div class="page" style="background-image: url('photos/Page_6.png');"></div>
+    <div class="page" style="background-image: url('photos/Page_7.png');"></div>
+    <div class="page" style="background-image: url('photos/Page_8.png');"></div>
+    <div class="page" style="background-image: url('photos/Page_9.png');"></div>
+    <div class="page" style="background-image: url('photos/Page_10.png');"></div>
+    <div class="page" style="background-image: url('photos/Page_11.png');"></div>
+    <div class="page" style="background-image: url('photos/Page_12.png');"></div>
+    <div class="page" style="background-image: url('photos/Page_13.png');"></div>
+    <div class="page" style="background-image: url('photos/Page_14.png');"></div>
+    <div class="page" style="background-image: url('photos/Page_15.png');"></div>
   </div>
 </div>
 
@@ -64,13 +64,13 @@
     const pageFlip = new St.PageFlip(
       document.getElementById('book'),
       {
-        width: 400,
-        height: 600,
+        width: 600,
+        height: 338,
         size: 'stretch',
-        minWidth: 280,
+        minWidth: 300,
         maxWidth: 1000,
-        minHeight: 400,
-        maxHeight: 1400,
+        minHeight: 200,
+        maxHeight: 700,
         maxShadowOpacity: 0.5,
         showCover: true,
         mobileScrollSupport: true
