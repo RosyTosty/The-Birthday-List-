@@ -13,24 +13,20 @@
       padding: 0;
     }
     body {
-      background-color: #111111;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background-color: #000000;
       min-height: 100vh;
+      overflow: hidden;
       font-family: sans-serif;
     }
     .swiper {
       width: 100vw;
       height: 100vh;
-      max-width: 600px;
-      max-height: 100vh;
     }
     .swiper-slide {
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #111111;
+      background: #000000;
     }
     .swiper-slide img {
       width: 100%;
@@ -38,13 +34,13 @@
       object-fit: contain;
       display: block;
     }
-    /* Custom pagination dots color */
+    /* Simple progress dots on the side */
     .swiper-pagination-bullet {
       background: #ffffff;
-      opacity: 0.5;
+      opacity: 0.4;
     }
     .swiper-pagination-bullet-active {
-      background: #ff4757;
+      background: #ffffff;
       opacity: 1;
     }
   </style>
@@ -53,44 +49,45 @@
 
 <div class="swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="Page_1.png" alt="Menu Page 1"></div>
-    <div class="swiper-slide"><img src="Page_2.png" alt="Menu Page 2"></div>
-    <div class="swiper-slide"><img src="Page_3.png" alt="Menu Page 3"></div>
-    <div class="swiper-slide"><img src="Page_4.png" alt="Menu Page 4"></div>
-    <div class="swiper-slide"><img src="Page_5.png" alt="Menu Page 5"></div>
-    <div class="swiper-slide"><img src="Page_6.png" alt="Menu Page 6"></div>
-    <div class="swiper-slide"><img src="Page_7.png" alt="Menu Page 7"></div>
-    <div class="swiper-slide"><img src="Page_8.png" alt="Menu Page 8"></div>
-    <div class="swiper-slide"><img src="Page_9.png" alt="Menu Page 9"></div>
-    <div class="swiper-slide"><img src="Page_10.png" alt="Menu Page 10"></div>
-    <div class="swiper-slide"><img src="Page_11.png" alt="Menu Page 11"></div>
-    <div class="swiper-slide"><img src="Page_12.png" alt="Menu Page 12"></div>
-    <div class="swiper-slide"><img src="Page_13.png" alt="Menu Page 13"></div>
-    <div class="swiper-slide"><img src="Page_14.png" alt="Menu Page 14"></div>
-    <div class="swiper-slide"><img src="Page_15.png" alt="Menu Page 15"></div>
+    <div class="swiper-slide"><img src="Page_1.png" alt="Page 1"></div>
+    <div class="swiper-slide"><img src="Page_2.png" alt="Page 2"></div>
+    <div class="swiper-slide"><img src="Page_3.png" alt="Page 3"></div>
+    <div class="swiper-slide"><img src="Page_4.png" alt="Page 4"></div>
+    <div class="swiper-slide"><img src="Page_5.png" alt="Page 5"></div>
+    <div class="swiper-slide"><img src="Page_6.png" alt="Page 6"></div>
+    <div class="swiper-slide"><img src="Page_7.png" alt="Page 7"></div>
+    <div class="swiper-slide"><img src="Page_8.png" alt="Page 8"></div>
+    <div class="swiper-slide"><img src="Page_9.png" alt="Page 9"></div>
+    <div class="swiper-slide"><img src="Page_10.png" alt="Page 10"></div>
+    <div class="swiper-slide"><img src="Page_11.png" alt="Page 11"></div>
+    <div class="swiper-slide"><img src="Page_12.png" alt="Page 12"></div>
+    <div class="swiper-slide"><img src="Page_13.png" alt="Page 13"></div>
+    <div class="swiper-slide"><img src="Page_14.png" alt="Page 14"></div>
+    <div class="swiper-slide"><img src="Page_15.png" alt="Page 15"></div>
   </div>
-  <!-- Navigation Dots & Arrows -->
   <div class="swiper-pagination"></div>
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
 </div>
 
 <!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   const swiper = new Swiper('.swiper', {
-    loop: false,
-    grabCursor: true,
-    spaceBetween: 10,
+    direction: 'vertical', /* TikTok style vertical swipe */
+    mousewheel: true,      /* Enables trackpad/mouse scrolling */
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
     },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
+  });
+
+  // Tap left/top to go back, tap right/bottom to go forward
+  document.addEventListener('click', (e) => {
+    const screenWidth = window.innerWidth;
+    if (e.clientX > screenWidth / 2) {
+      swiper.slideNext();
+    } else {
+      swiper.slidePrev();
+    }
   });
 </script>
 </body>
